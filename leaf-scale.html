@@ -1,0 +1,67 @@
+<<link rel="import" href="../polymer/polymer.html">
+
+<polymer-element name="leaf-scale" attributes="leafCount level">
+	<template>
+		<style>
+			:host{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				overflow: hidden;
+			}
+
+			#leaves{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+
+			#leaves img{
+				display: block;
+				width: 80px;
+			}
+		</style>
+
+		<section id="leaves">
+			<template repeat="{{leaf in leaves}}">
+				<img src="{{leafIcon[leaf]}}" />
+			</template>
+		</section>
+
+	</template>
+	<script>
+		Polymer({
+
+			leafCount: 4,
+
+			ready: function(){
+				this.super();
+
+				this.leaves = [];
+
+				this.leafIcon = [
+					"bower_components/sensor-leaf/leaf_off.png",
+					"bower_components/sensor-leaf/leaf.png"
+				];
+
+				for(var i=0;i<this.leafCount;i++){
+					this.leaves.push(0);
+				}
+
+			},
+
+			setLevel: function(level){
+				for(var i=0; i<this.leaves.length; i++){
+					if(i<=level) this.leaves[i] = 1;
+					else this.leaves[i] = 0;
+				}
+			},
+
+			levelChanged: function(){
+				this.setLevel(this.level);
+			}
+		})
+	</script>
+</polymer-element>
