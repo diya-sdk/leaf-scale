@@ -1,20 +1,21 @@
 {
-  "name": "leaf-scale",
-  "version": "0.0.1",
-  "main": "leaf-scale.html",
-  "homepage": "https://github.com/partnering/leaf-scale",
-  "authors": [
-    "Sylvain Mahe <sylv.mahe@gmail.com>"
-  ],
-  "license": "LGPL v3.0",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "polymer": "Polymer/polymer#~1.1.5"
-  }
+	"name": "leaf-scale",
+	"version": "0.0.1",
+	"main": "leaf-scale.html",
+	"homepage": "https://github.com/partnering/leaf-scale",
+	"authors": [
+		"Sylvain Mahe <sylv.mahe@gmail.com>"
+	],
+	"license": "LGPL v3.0",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"description": "behavior for leaf scale",
+	"dependencies": {
+		"polymer": "Polymer/polymer#~1.1.5"
+	}
 }
