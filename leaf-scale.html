@@ -28,7 +28,7 @@
 
 		<section id="leaves">
 			<template is="dom-repeat" items="{{leaves}}" as="leaf">
-				<img src="{{_computeSrc(leaf, leafIcon)}}">
+				<img src$="{{_computeSrc(leaf, leafIcon)}}">
 			</template>
 		</section>
 
@@ -49,14 +49,12 @@
 			}
 		},
 		ready: function () {
-			this.super();
 			this.leaves = [];
-			this.leafIcon = [
-				'bower_components/leaf-scale/leaf_off.png',
-				'bower_components/leaf-scale/leaf.png'
-			];
+			this.leafIcon = [];
+			this.push('leafIcon','bower_components/leaf-scale/leaf_off.png',
+			          'bower_components/leaf-scale/leaf.png');
 			for (var i = 0; i < this.leafCount; i++) {
-				this.leaves.push(0);
+				this.push('leaves',0);
 			}
 		},
 		setLevel: function (level) {
