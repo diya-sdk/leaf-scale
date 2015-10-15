@@ -33,45 +33,45 @@
 		</section>
 
 	</template>
-  <script>
-    Polymer({
-      is: 'leaf-scale',
-      properties: {
-        leafCount: {
-          type: Number,
-          value: 4,
-          notify: true
-        },
-        level: {
-          notify: true,
-          observer: 'levelChanged'
-        }
-      },
-      ready: function () {
-        this.super();
-        this.leaves = [];
-        this.leafIcon = [
-          'bower_components/leaf-scale/leaf_off.png',
-          'bower_components/leaf-scale/leaf.png'
-        ];
-        for (var i = 0; i < this.leafCount; i++) {
-          this.leaves.push(0);
-        }
-      },
-      setLevel: function (level) {
-        for (var i = 0; i < this.leaves.length; i++) {
-          if (i <= level)
-            this.set('leaves' + ('.' + i), 1);
-          else
-            this.set('leaves' + ('.' + i), 0);
-        }
-      },
-      levelChanged: function () {
-        this.setLevel(this.level);
-      },
-      _computeSrc: function (leaf, leafIcon) {
-        return leafIcon[leaf];
-      }
-    });
-  </script>
 </dom-module>
+<script>
+	Polymer({
+		is: 'leaf-scale',
+		properties: {
+			leafCount: {
+				type: Number,
+				value: 4,
+				notify: true
+			},
+			level: {
+				notify: true,
+				observer: 'levelChanged'
+			}
+		},
+		ready: function () {
+			this.super();
+			this.leaves = [];
+			this.leafIcon = [
+				'bower_components/leaf-scale/leaf_off.png',
+				'bower_components/leaf-scale/leaf.png'
+			];
+			for (var i = 0; i < this.leafCount; i++) {
+				this.leaves.push(0);
+			}
+		},
+		setLevel: function (level) {
+			for (var i = 0; i < this.leaves.length; i++) {
+				if (i <= level)
+					this.set('leaves' + ('.' + i), 1);
+				else
+					this.set('leaves' + ('.' + i), 0);
+			}
+		},
+		levelChanged: function () {
+			this.setLevel(this.level);
+		},
+		_computeSrc: function (leaf, leafIcon) {
+			return leafIcon[leaf];
+		}
+	});
+</script>
