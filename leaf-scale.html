@@ -46,6 +46,9 @@
 			level: {
 				notify: true,
 				observer: 'levelChanged'
+			},
+			leaves: {
+				notify: true
 			}
 		},
 		ready: function () {
@@ -60,9 +63,9 @@
 		setLevel: function (level) {
 			for (var i = 0; i < this.leaves.length; i++) {
 				if (i <= level)
-					this.set('leaves' + ('.' + i), 1);
-				else
-					this.set('leaves' + ('.' + i), 0);
+					this.splice('leaves', i, 1, 1);
+				else 
+					this.splice('leaves', i, 1, 0);
 			}
 		},
 		levelChanged: function () {
