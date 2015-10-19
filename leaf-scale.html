@@ -43,22 +43,24 @@
 				value: 4,
 				notify: true
 			},
+			leaves: {
+				notify: true,
+				value: function() {return [];},
+			},
 			level: {
+				type: Number,
 				notify: true,
 				observer: 'levelChanged'
-			},
-			leaves: {
-				notify: true
 			}
 		},
 		ready: function () {
-			this.leaves = [];
 			this.leafIcon = [];
-			this.push('leafIcon','bower_components/leaf-scale/leaf_off.png',
-			          'bower_components/leaf-scale/leaf.png');
 			for (var i = 0; i < this.leafCount; i++) {
 				this.push('leaves',0);
 			}
+			this.push('leafIcon','bower_components/leaf-scale/leaf_off.png',
+			          'bower_components/leaf-scale/leaf.png');
+			this.setLevel(this.level);
 		},
 		setLevel: function (level) {
 			for (var i = 0; i < this.leaves.length; i++) {
