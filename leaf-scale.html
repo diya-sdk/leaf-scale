@@ -9,26 +9,32 @@
 				align-items: center;
 
 				overflow: hidden;
+				width: 100%;
+				height: 100%;
 			}
 
 			#leaves{
 				display: flex;
 				flex-direction: row;
 				align-items: center;
+				width: 100%;
+				height: 100%;
 			}
 
 			#leaves img{
 				display: block;
-				width: 50px;
-				margin-left: 10px;
-				margin-right: 10px;
+				/* margin-left: 10px; */
+				/* margin-right: 10px; */
+				height: 95%;
+				padding-left: 2%;
+				padding-right: 2%;
 			}
 		</style>
   <template>
 
 		<section id="leaves">
 			<template is="dom-repeat" items="{{leaves}}" as="leaf">
-				<img src$="{{_computeSrc(leaf, leafIcon)}}">
+				<img src$="{{_computeSrc(leaf, leafIcon)}}" style$={{_compute_dim(leafCount,height)}}>
 			</template>
 		</section>
 
@@ -51,6 +57,16 @@
 				type: Number,
 				notify: true,
 				observer: 'levelChanged'
+			},
+			width: {
+				type: String,
+				value: "50px",
+				notify: true
+			},
+			height: {
+				type: String,
+				value: "",
+				notify: true
 			}
 		},
 		ready: function () {
@@ -75,6 +91,9 @@
 		},
 		_computeSrc: function (leaf, leafIcon) {
 			return leafIcon[leaf];
+		},
+		_compute_dim(leafCount,height) {
+			return (leafCount? "max-width: "+100/leafCount+"%; " :"");
 		}
 	});
 </script>
