@@ -1,4 +1,4 @@
-&lt;<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="leaf-scale">
   <style>
@@ -29,6 +29,33 @@
 				padding-left: 2%;
 				padding-right: 2%;
 			}
+
+
+      /****************** JFELLUS FOR INTEGRATED ECOBOARD ******************/
+
+      		#leaves {
+      			display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          flex-wrap: nowrap;
+          justify-content: space-around;
+          padding: 5px;
+          box-sizing: border-box;
+      		}
+
+      		#leaves img {
+      			display: block;
+      height: auto;
+      padding-left: 2%;
+      padding-right: 2%;
+      width: 25%;
+      box-sizing: border-box;
+      		}
+
+          /***************************************************/
+
 		</style>
   <template>
 
@@ -82,7 +109,7 @@
 			for (var i = 0; i < this.leaves.length; i++) {
 				if (i <= level)
 					this.splice('leaves', i, 1, 1);
-				else 
+				else
 					this.splice('leaves', i, 1, 0);
 			}
 		},
