@@ -16,6 +16,6 @@
 	],
 	"description": "behavior for leaf scale",
 	"dependencies": {
-		"polymer": "Polymer/polymer#~1.1.5"
+		"polymer": "Polymer/polymer"
 	}
 }
