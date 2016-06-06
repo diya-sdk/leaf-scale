@@ -7,29 +7,28 @@
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
-
 				overflow: hidden;
-				max-width: 100%;
-				max-height: 100%;
-				width: auto;
-				height: auto;
+				width: 100%;
+				height: 100%;
 			}
 
 			#leaves{
 				display: flex;
 				flex-direction: row;
+				justify-content: space-around;
 				align-items: center;
-				max-width: 100%;
-				max-height: 100%;
+				height: 100%;
+				padding-left: 5%;
+				padding-right: 5%;
 			}
 
 			#leaves img{
 				display: block;
 				/* margin-left: 10px; */
 				/* margin-right: 10px; */
-				width: auto;
-				height: auto;
-				max-height: 95%;
+				max-height: 100%;
+				/* padding-left: 3%; */
+				/* padding-right: 3%; */
 				padding-left: 2%;
 				padding-right: 2%;
 			}
@@ -37,26 +36,25 @@
 
       /****************** JFELLUS FOR INTEGRATED ECOBOARD ******************/
 
-      		#leaves {
-      			display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          flex-wrap: nowrap;
-          justify-content: space-around;
-          padding: 5px;
-          box-sizing: border-box;
-      		}
+			/* #leaves { */
+			/* 	display: flex; */
+			/* 	flex-direction: row; */
+			/* 	align-items: center; */
+			/* 	width: 100%; */
+			/* 	height: 100%; */
+			/* 	flex-wrap: nowrap; */
+			/* 	justify-content: space-around; */
+			/* 	padding: 5px; */
+			/* 	box-sizing: border-box; */
+			/* } */
 
-      		#leaves img {
-      			display: block;
-      height: auto;
-      padding-left: 2%;
-      padding-right: 2%;
-      width: 25%;
-      box-sizing: border-box;
-      		}
+			/* #leaves img { */
+			/* 	display: block; */
+			/* 	height: auto; */
+			/* 	padding-left: 2%; */
+			/* 	padding-right: 2%; */
+			/* 	box-sizing: border-box; */
+			/* } */
 
           /***************************************************/
 
@@ -105,8 +103,8 @@
 			for (var i = 0; i < this.leafCount; i++) {
 				this.push('leaves',0);
 			}
-			this.push('leafIcon','bower_components/leaf-scale/leaf_off.png',
-			          'bower_components/leaf-scale/leaf.png');
+			this.push('leafIcon','bower_components/leaf-scale/leaf_off_150x300.png',
+			          'bower_components/leaf-scale/leaf_150x300.png');
 			this.setLevel(this.level);
 		},
 		setLevel: function (level) {
