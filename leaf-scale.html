@@ -5,32 +5,31 @@
 			:host{
 				display: flex;
 				flex-direction: row;
-				justify-content: space-between;
+				justify-content: flex-end;
 				align-items: center;
 				overflow: hidden;
-				width: 100%;
 				height: 100%;
+				width: auto;
 			}
 
 			#leaves{
 				display: flex;
 				flex-direction: row;
-				justify-content: space-around;
+				justify-content: space-between;
 				align-items: center;
 				height: 100%;
-				padding-left: 5%;
-				padding-right: 5%;
+				width: auto;
 			}
 
 			#leaves img{
 				display: block;
 				/* margin-left: 10px; */
 				/* margin-right: 10px; */
-				max-height: 98%;
+				height: 100%;
 				/* padding-left: 3%; */
 				/* padding-right: 3%; */
-				padding-left: 3%;
-				padding-right: 3%;
+				padding-left: 10px;
+				padding-right: 10px;
 			}
 
 
@@ -63,7 +62,7 @@
 
 		<section id="leaves">
 			<template is="dom-repeat" items="{{leaves}}" as="leaf">
-				<img src$="{{_computeSrc(leaf, leafIcon)}}" style$={{_compute_dim(leafCount,height)}}>
+				<img src$="{{_computeSrc(leaf, leafIcon)}}" >
 			</template>
 		</section>
 
@@ -100,11 +99,11 @@
 		},
 		ready: function () {
 			this.leafIcon = [];
+			this.push('leafIcon','bower_components/leaf-scale/leaf_off_150x300.png',
+			          'bower_components/leaf-scale/leaf_150x300.png');
 			for (var i = 0; i < this.leafCount; i++) {
 				this.push('leaves',0);
 			}
-			this.push('leafIcon','bower_components/leaf-scale/leaf_off_150x300.png',
-			          'bower_components/leaf-scale/leaf_150x300.png');
 			this.setLevel(this.level);
 		},
 		setLevel: function (level) {
@@ -120,9 +119,6 @@
 		},
 		_computeSrc: function (leaf, leafIcon) {
 			return leafIcon[leaf];
-		},
-		_compute_dim(leafCount,height) {
-			return (leafCount? "max-width: "+(100-leafCount*4)/leafCount+"%; " :"");
 		}
 	});
 </script>
