@@ -1,7 +1,8 @@
 <link rel="import" href="../polymer/polymer.html">
 
 <dom-module id="leaf-scale">
-  <style>
+	<template>
+		<style>
 			:host{
 				display: flex;
 				flex-direction: row;
@@ -20,16 +21,30 @@
 				width: auto;
 			}
 
-			#leaves img{
-				display: block;
+			/*#leaves img{*/
+	/*			display: block; */
 				/* margin-left: 10px; */
 				/* margin-right: 10px; */
-				width: 80px;
+	/*			width: 80px; */
 				/* padding-left: 3%; */
 				/* padding-right: 3%; */
-				padding-left: 10px;
+	/*			padding-left: 10px;
 				padding-right: 10px;
-			}
+    */
+
+                /*width: 30px;
+            height: 35px;
+            padding-left: 1px;
+            padding-right: 1px;*/
+			/*}*/
+
+
+            #leaves img {
+                width: var(--sensor-leaf-img-width);
+                height: var(--sensor-leaf-img-height);
+                padding-left: var(--sensor-leaf-img-padding-left);
+                padding-right: var(--sensor-leaf-img-padding-right);
+            }
 
 
       /****************** JFELLUS FOR INTEGRATED ECOBOARD ******************/
@@ -57,7 +72,7 @@
           /***************************************************/
 
 		</style>
-  <template>
+
 
 		<section id="leaves">
 			<template is="dom-repeat" items="{{leaves}}" as="leaf">
